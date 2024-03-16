@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+
+            <% if (err.length != 0) { %>
+                <div class="alert alert-danger mt-3" role="alert">
+                    <ul>
+                        <% err.forEach(e => { %>
+                            <li>
+                                <%= e %>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            <% } %>
+
+            <form method="POST" action="/contact-add">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    <div class="form-text">
+                        you have to fill in your name
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10,12}" required>
+                    <div class="form-text">
+                        you have to fill in your phone number
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                    <div class="form-text">
+                        you don't have to fill in your E-mail address
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>
